@@ -1,27 +1,10 @@
-import reactimg from './assets/react-core-concepts.png';
 import componentImg from './assets/components.png';
 import { CORE_CONCEPTS } from './data';
+import Header from './components/Header/Header.jsx';
+import CoreConcepts from './components/CoreConcepts';
+import TabButton from './components/TabButton.jsx';
 
-const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function Header(){
-  const randomIndex = reactDescriptions[genRandomInt(reactDescriptions.length - 1)];
-  return (
-
-    <header>
-      <img src={reactimg} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {randomIndex} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
 function MainGoal() {
   return (
     <section>
@@ -35,17 +18,6 @@ function MainGoal() {
   );
 }
 
-function CoreConcepts({image,description,title}) {
-
-  return (
-    <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </li>
-  );
-
-}
 
 function App() {
   return (
@@ -62,6 +34,15 @@ function App() {
         <CoreConcepts {...CORE_CONCEPTS[2]}/>
         <CoreConcepts {...CORE_CONCEPTS[3]}/>
       </ul>
+      </section>
+      <section id="examples">
+        <h2>Examples</h2>
+        <menu>
+          <TabButton>Components</TabButton>
+          <TabButton>JSX</TabButton>
+          <TabButton>Props</TabButton>
+          <TabButton>State</TabButton>
+        </menu>
       </section>
       </main>
     </div>
